@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  background: linear-gradient(135deg, #ffc1c1, #fbe7c6);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 0;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+header {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 2.5rem;
+  margin: 0 20px;
+  color: #e63946;
+}
+header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #e63946;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-weight: 700;
+}
+img {
+  color: #e63946;
+  font-size: 2rem;
+  text-align: center;
+}
+/*Sección para línea del tiempo*/
+.timeline {
+  display: flex;
+}
+.timeline-left {
+  flex: 3;
+  padding: 0 20px;
+  overflow-y: auto;
+}
+.month-section {
+  margin-bottom: 20px;
+}
+.month-section h2 {
+  font-size: 1.5rem;
+  color: #e63946;
+  margin-bottom: 10px;
+}
+.month-section p {
+  flex: 1;
+  font-size: 1rem;
+}
+/*Imágenes de cada mes*/
+.month-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  justify-items: stretch;
+  align-items: stretch;
+}
+.month-content img {
+  width: 100%;
+  min-width: 100px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.month-content img:hover {
+  transform: scale(1.025);
+}
+/*Sección de navegación*/
+.drawer {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  right: -350px;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  overflow-y: auto;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+/*Cerrar y abrir drawer removiendo el open con JS*/
+.drawer.open {
+  right: 0;
+}
+.drawer-head {
+  display: flex;
+  justify-content: space-between;
+}
+.close-drawer {
+  background: none;
+  border: none;
+  color: #e63946;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.drawer ul {
+  list-style: none;
+  padding: 0;
+}
+.drawer ul li {
+  margin-bottom: 3vh;
+}
+.drawer ul li a {
+  box-shadow: inset 0 0 0 0 #e63946;
+  text-decoration: none;
+  color: #e63946;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0 0.25rem;
+  margin: 0 -0.25rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.drawer ul li a:hover {
+  color: #fff;
+  box-shadow: inset 250px 0 0 0 #e63946;
+}
+/*Estilos del modal para imágenes*/
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+.modal .close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
